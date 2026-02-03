@@ -60,7 +60,7 @@ DOWNLOAD_DIR=downloaded_model
 ```bash
 GOOGLE_APPLICATION_CREDENTIALS=/home/user/gcloud/service-account-key.json
 PROJECT_ID=my-gcp-project
-BUCKET_NAME=my-models-bucket
+BUCKET=my-models-bucket
 LOCATION=us-central1
 MODEL_DIR=qwen2.5-3b-instruct
 ```

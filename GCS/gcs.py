@@ -12,9 +12,9 @@ PROJECT_ID = os.environ.get("PROJECT_ID")
 if not PROJECT_ID:
     raise FileNotFoundError("PROJECT_ID environment variable not set")
 
-BUCKET_NAME = os.environ.get("BUCKET_NAME")
+BUCKET_NAME = os.environ.get("BUCKET")
 if not BUCKET_NAME:
-    raise FileNotFoundError("BUCKET_NAME environment variable not set")
+    raise FileNotFoundError("BUCKET environment variable not set")
 
 LOCATION = os.environ.get("LOCATION", "us-central1")
 MODEL_DIR = os.environ.get("MODEL_DIR", "qwen2.5-3b-instruct")
