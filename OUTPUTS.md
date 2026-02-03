@@ -214,6 +214,23 @@ Endpoint resource projects/671902667767/locations/us-central1/endpoints/mg-endpo
 
 ---
 
+## (Optional) Step 8: Delete from Model Registry: If deciding to delete model bucket from GCS
+
+```bash
+python -u "c:\Users\thanya.r\Downloads\Gcloud\vertex_register_model.py"
+```
+
+**Output:**
+```
+Deleting model with ID: 8340656614285508608...
+Deleting Model : projects/671902667767/locations/us-central1/models/8340656614285508608
+Model deleted. . Resource name: projects/671902667767/locations/us-central1/models/8340656614285508608
+Deleting Model resource: projects/671902667767/locations/us-central1/models/8340656614285508608
+Delete Model backing LRO: projects/671902667767/locations/us-central1/models/8340656614285508608/operations/4889373160400486400
+Model resource projects/671902667767/locations/us-central1/models/8340656614285508608 deleted.
+✓ Model 8340656614285508608 deleted successfully!
+```
+
 ## Summary
 
 ### Successful Operations:
@@ -223,6 +240,7 @@ Endpoint resource projects/671902667767/locations/us-central1/endpoints/mg-endpo
 4. ✓ Inference requests completed successfully
 5. ✓ Model undeployed
 6. ✓ Endpoint deleted
+7. ✓ Model Registry deleted
 
 ### Issues Encountered:
 - ✗ Invalid accelerator type `NVIDIA_TESLA_L4` - should use `NVIDIA_L4` instead
