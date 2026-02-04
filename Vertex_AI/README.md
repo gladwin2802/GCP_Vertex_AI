@@ -25,8 +25,11 @@ This file manages how your models are deployed and made available for use.
 
 **What it does:**
 - Deploys a model to an endpoint (makes it ready to use)
+- Supports two deployment methods:
+  - Deploy from Vertex AI Model Garden (recommended / most reliable)
+  - Deploy a registered model by `MODEL_ID` (manual path)
 - Lists all models currently deployed on an endpoint
-- Removes a model from an endpoint
+- Removes a model from an endpoint (by deployed model ID or by model display name)
 - Deletes entire endpoints
 
 ### 4. **vertex_inference_online.py**
@@ -58,14 +61,14 @@ PROJECT_ID=your-project-id
 LOCATION=us-central1
 
 # Endpoint display name (used by vertex_deployment.py and vertex_inference_online.py)
-# Default: "llama-3-1-8b-instruct-mg-one-click-deploy"
+# Default: script default (see vertex_deployment.py)
 ENDPOINT_DISPLAY_NAME=your-endpoint-name
 
 # Model display name (used by vertex_deployment.py)
 # Default: "llama-3-1-8b-instruct"
 MODEL_DISPLAY_NAME=your-model-name
 
-# Model ID for undeploying (used by vertex_deployment.py)
+# Model ID (used by vertex_deployment.py for deploy_registered_model / undeploy by ID)
 MODEL_ID=your-model-id
 
 # Model ID for deletion (used by vertex_model_register.py)
@@ -97,8 +100,14 @@ MODEL_DISPLAY_NAME=my-llama-model
 
 1. **Register a model** using `vertex_model_register.py`
 2. **Deploy the model** using `vertex_deployment.py`
+   - Recommended: deploy from Model Garden (`deploy_model`)
+   - Optional: deploy an already-registered model (`deploy_registered_model`)
 3. **Use the model** to make predictions with `vertex_inference_online.py`
 4. **Manage your resources** using `vertex_auth.py` to see what you have
+
+## Notes
+
+- `vertex_deployment.py` prints the total time taken for the action you run in its `__main__` block (deploy/undeploy/delete), so you can track how long it took.
 
 ## Requirements
 

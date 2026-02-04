@@ -124,3 +124,6 @@ The workflow of downloading OSS models from HuggingFace, uploading to GCS, and t
 **Recommendation:**
 For deploying models, use the Model Garden approach available in the `vertex_deployment.py` file, which deploys models directly from Vertex AI's Model Garden. This method is more reliable and easier to use than the manual upload workflow.
 
+**Timing:**
+`Vertex_AI/vertex_deployment.py` prints the total time taken for the action you run (deploy/undeploy/delete), so you can measure how long a deployment or cleanup took.
+

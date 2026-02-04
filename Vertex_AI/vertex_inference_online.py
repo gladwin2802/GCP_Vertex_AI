@@ -14,7 +14,7 @@ if not PROJECT_ID:
     raise FileNotFoundError("PROJECT_ID environment variable not set")
 
 LOCATION = os.environ.get("LOCATION", "us-central1")
-ENDPOINT_DISPLAY_NAME = os.environ.get("ENDPOINT_DISPLAY_NAME", "llama-3-1-8b-instruct-mg-one-click-deploy")
+ENDPOINT_DISPLAY_NAME = os.environ.get("ENDPOINT_DISPLAY_NAME", "llama-3-1-8b-instruct-deploy")
 
 aiplatform.init(project=PROJECT_ID, location=LOCATION)
 
